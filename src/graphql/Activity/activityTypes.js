@@ -21,7 +21,7 @@ export const activityTypes=gql `
     }
 
     input ActivityInput{
-        activityName: String
+        activityName: String!
         activityType:String
         address:String
         notes:String

@@ -6,6 +6,7 @@ const FoodSchema = new mongoose.Schema({
         },
         foodType: {
             type: String,
+            enum:['Restaurant', 'Coffee', 'Farm Market'],
             required: true
         },
         foodPlaceName: {

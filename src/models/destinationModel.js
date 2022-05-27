@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import ActivityModel from "./activityModel.js";
-import FoodModel from "./foodModel.js";
+//import ActivityModel from "./activityModel.js";
+//import FoodModel from "./foodModel.js";
 
 const DestinationSchema = new mongoose.Schema({
         _id: {
@@ -12,7 +12,9 @@ const DestinationSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-
+        destinationDescription: {
+            type: String
+        },
         destinationFood: [
             {
                 type: mongoose.Schema.Types.ObjectId,

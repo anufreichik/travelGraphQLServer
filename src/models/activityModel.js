@@ -7,6 +7,7 @@ const ActivitySchema = new mongoose.Schema({
         },
         activityType: {
             type: String,
+           // enum: ['General', 'Hiking', 'Art', 'Sport'],
             required: true
         },
         activityName: {
@@ -14,13 +15,16 @@ const ActivitySchema = new mongoose.Schema({
             required: true
         },
         address: {
-            type: String
+            type: String,
+            required: false
         },
         notes: {
-            type: String
+            type: String,
+            required: false
         },
         link: {
-            type: String
+            type: String,
+            required: false
         },
         destination: {
             type: mongoose.Schema.Types.ObjectId,
