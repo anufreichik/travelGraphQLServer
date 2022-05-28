@@ -7,7 +7,7 @@ const ActivitySchema = new mongoose.Schema({
         },
         activityType: {
             type: String,
-           // enum: ['General', 'Hiking', 'Art', 'Sport'],
+            enum: ['general', 'hiking', 'art', 'sport'],
             required: true
         },
         activityName: {

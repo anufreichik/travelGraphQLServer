@@ -9,7 +9,7 @@ export const destinationGet = async (_, {destinationId}) => {
         if(!Validate.mongoId.check(destinationId)) throw ApiError.NotFound();
 
         const destination = await Destination.findOne({ _id: destinationId })
-            .populate({ path: 'destinationFood destinationActivity' });
+            .populate({ path: 'destinationFood destinationActivity destinationAccommodation' });
 
         if (!destination) throw new ValidationError('No Destination found by provided ID');
 
