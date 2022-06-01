@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
-//import ActivityModel from "./activityModel.js";
-//import FoodModel from "./foodModel.js";
+import Activity from './activityModel.js';
+import Food from './foodModel.js';
+import Accommodation from './accommodationModel.js';
 
 const DestinationSchema = new mongoose.Schema({
         _id: {
@@ -45,5 +46,14 @@ const DestinationSchema = new mongoose.Schema({
 
     {timestamps: {}, versionKey: false},
 );
+//cascade delete handle
+DestinationSchema.pre('remove', async function (next){
+    const destination = this
+    await Activity.deleteMany({destination:destination._id});
+    await Food.deleteMany({destination:destination._id});
+    await Accommodation.deleteMany({destination:destination._id});
+    next();
+})
+
 
 export default mongoose.model('Destination', DestinationSchema);
