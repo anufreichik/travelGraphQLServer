@@ -37,6 +37,12 @@ const DestinationSchema = new mongoose.Schema({
         images:[
             {type: String}
         ],
+        likes:[
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User',
+            },
+        ],
         owner: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',

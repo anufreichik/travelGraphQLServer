@@ -7,6 +7,7 @@ const AccommodationSchema = new mongoose.Schema({
         },
         accommodationType: {
             type: String,
+            enum:['hotel', 'airbnb', 'b&b'],
             required: true
         },
         accommodationName: {
