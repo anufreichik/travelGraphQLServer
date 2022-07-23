@@ -17,7 +17,7 @@ export const foodPlaceDelete = async (root, {foodPlaceId}, context) => {
 
         if (!foodPlace) throw new ValidationError('No Food Place found by provided ID');
 
-        if(user._id===foodPlace.owner)
+        if(user._id===foodPlace.owner.toString())
         {
             await foodPlace.delete();
             await Destination.findOneAndUpdate({_id: mongoose.Types.ObjectId(foodPlace.destination)},
