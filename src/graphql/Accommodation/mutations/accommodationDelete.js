@@ -17,9 +17,9 @@ export const accommodationDelete = async (root, {accommodationId}, context) => {
 
         if (!accommodation) throw new ValidationError('No Accommodation found by provided ID');
 
-        if (user._id === accommodation.owner) {
+        if(user._id===accommodation.owner.toString()) {
             await accommodation.delete();
-            //remove id from destination model destinattionAccommodation
+            //remove id from destination model destination accommodations array
             await Destination.findOneAndUpdate({_id: mongoose.Types.ObjectId(accommodation.destination)},
                 {$pull: {destinationAccommodation: accommodationId}},
                 {new: true},);

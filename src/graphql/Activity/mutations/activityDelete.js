@@ -17,7 +17,7 @@ export const activityDelete = async (root, {activityId}, context) => {
 
         if (!activity) throw new ValidationError('No Activity found by provided ID');
 
-        if(user._id===activity.owner)
+        if(user._id===activity.owner.toString())
         {
             await activity.delete();
 
