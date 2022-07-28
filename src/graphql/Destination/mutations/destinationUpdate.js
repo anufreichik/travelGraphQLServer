@@ -12,7 +12,7 @@ export const destinationUpdate = async (_, { destinationId, values }, { userData
             { _id: destinationId },
             { $set: values },
             { new: true },
-        ).populate({ path: 'destinationFood destinationActivity' });
+        ).populate({ path: 'destinationFood destinationActivity destinationAccommodation' });
 
         if (!destination) throw ApiError.BadRequest('Destination not exist with provided ID');
 

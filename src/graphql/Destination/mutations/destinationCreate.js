@@ -12,7 +12,7 @@ export const destinationCreate = async (root, { values },context) => {
 
         await destination.save();
 
-        return await destination.populate({ path: 'destinationFood destinationActivity' });
+        return await destination.populate({ path: 'destinationFood destinationActivity destinationAccommodation' });
 
     } catch (e) {
         throw new UserInputError(e);

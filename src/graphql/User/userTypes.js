@@ -24,6 +24,7 @@ export const userTypes = gql`
         firstName: String!
         lastName: String
         lastAccess: String
+        starredDestinations:[String]
     }
 
     type RegisteredUser {

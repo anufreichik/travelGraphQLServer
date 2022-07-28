@@ -5,6 +5,7 @@ import {destinationsGetByUser} from "./queries/destinationsByUser.js";
 import {destinationDelete} from "./mutations/destinationDelete.js";
 import {destinationCreate} from "./mutations/destinationCreate.js";
 import {destinationUpdate} from "./mutations/destinationUpdate.js";
+import {destinationUpdateStarred} from "./mutations/destinationUpdateStarred.js";
 
 export const destinationResolvers = {
     Query: {
@@ -16,5 +17,6 @@ export const destinationResolvers = {
         destinationCreate: destinationCreate,
         destinationDelete: destinationDelete,
         destinationUpdate: destinationUpdate,
+        destinationUpdateStarred:destinationUpdateStarred,
     }
 };

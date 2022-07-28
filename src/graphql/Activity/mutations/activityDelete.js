@@ -22,7 +22,7 @@ export const activityDelete = async (root, {activityId}, context) => {
             await activity.delete();
 
             await Destination.findOneAndUpdate({_id: mongoose.Types.ObjectId(activity.destination)},
-                {$pull: {destinationFood: activityId}},
+                {$pull: {destinationActivity: activityId}},
                 {new: true},);
             return 'Activity deleted successfully';
         }

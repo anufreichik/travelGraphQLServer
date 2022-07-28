@@ -14,6 +14,7 @@ export const destinationGetAll = async (
             //.populate('destinationFood destinationActivity')
             .populate('destinationFood')
             .populate('destinationActivity')
+            .populate('destinationAccommodation')
             .sort({ createdAt: -1 })
             .skip(offset)
             .limit(limit);

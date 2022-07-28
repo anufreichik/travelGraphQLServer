@@ -47,7 +47,14 @@ const userSchema = mongoose.Schema(
         lastAccess: {
             type: Date,
             default: Date.now
-        }
+        },
+
+        starredDestinations:[
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Destination',
+            },
+        ],
     },
 
     { timestamps: {}, versionKey: false },

@@ -37,7 +37,7 @@ const DestinationSchema = new mongoose.Schema({
         images:[
             {type: String}
         ],
-        likes:[
+        starredBy:[
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'User',
